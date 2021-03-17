@@ -14,3 +14,18 @@ function toggleColor(){
         $(".color-button").css("background-color", "white");
     }
 }
+
+function resizeFont(){
+    console.log("Triggered")
+    textFit(
+        $("#text-input"), 
+        {
+            multiLine: true, 
+            detectMultiLine: false,
+            alignHoriz: true, 
+            alignVert: true,
+            minFontSize: 12,
+            maxFontSize: 1024,
+        }
+    );
+}

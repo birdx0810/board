@@ -49,6 +49,12 @@ table {
 
 /* Self-written CSS*/
 body {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+	margin: 0px;
 	background-color: black;
 	height: 100%;
 	width: 100%;
@@ -57,14 +63,16 @@ body {
 #text-input {
 	background-color: transparent;
 	color: white;
+	display: inline-block;
 	height: 100%;
 	width: 100%;
 	text-align: center;
-	display: inline-block;
 	box-sizing: border-box;
 	overflow-x: hidden;
 	overflow-y: hidden;
 	resize: none;
+	word-wrap: break-word;
+	white-space: nowrap;
 }
 
 .color-button {
