@@ -67,7 +67,7 @@ body {
 	resize: none;
 }
 
-#color-button {
+.color-button {
 	background-color: white;
 	border-color: grey;
 	border-width: 3.5px;
