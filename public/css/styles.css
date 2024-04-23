@@ -21,7 +21,7 @@ body {
 	display: table-cell;
 	text-align: center;
 	vertical-align: middle;
-	height: 100vh;
+	height: 100dvh;
 	width: 100vw;
 	word-break: break-word;
 	overflow-wrap: break-word;
