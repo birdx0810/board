@@ -25,10 +25,22 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v1
-      - name: Build Image and Push to Docker Hub
+      - name: Build Image and Push to Docker Hub (TAG)
         uses: docker/build-push-action@v2
         with:
           context: ./
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/board:${{ github.ref_name }}
+      - name: Build Image and Push to Docker Hub (LATEST)
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/board:latest
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v4
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
