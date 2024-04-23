@@ -4,7 +4,7 @@
   "description": "This is a simple Black/White Board that allows user to write text on a webpage and displaying it to others, just like a black board or white board. The font size would scale according to input or the display size of the webpage. This is done using a simple binary search algorithm.",
   "main": "src/app.js",
   "scripts": {
-    "serve": "node src/"
+    "serve": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "homepage": "https://github.com/birdx0810/board#readme",
   "dependencies": {
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
