@@ -14,30 +14,33 @@ $(document).ready(function () {
 })
 
 function binarySearch(textarea) {
-    let low = 1;
-    let high = textarea.innerHeight();
+    let minFontSize = 1;
+    let maxFontSize = 2048;
 
     innerHeight = textarea.parent().innerHeight();
+    innerWidth = textarea.parent().innerWidth();
 
     // Search from the middle fontSize.
-    while (low <= high) {
-        fontSize = low + (high - low) / 2
+    while (minFontSize <= maxFontSize) {
+        fontSize = minFontSize + (maxFontSize - minFontSize) / 2
         textarea.css("font-size", (fontSize) + "px")
         scrollHeight = textarea.prop("scrollHeight")
+        scrollWidth = textarea.prop("scrollWidth")
 
         // The space of text area is larger than container
-        if (scrollHeight - innerHeight > 0) {
+        if (scrollHeight - innerHeight > 0 || scrollWidth - innerWidth > 0) {
             // Make font smaller
-            high = fontSize - 1
+            maxFontSize = fontSize - 1
         }
         // The space of text area is smaller than container
-        else if (scrollHeight - innerHeight < 0) {
+        else if (scrollHeight - innerHeight < 0 || scrollWidth - innerWidth < 0) {
             // Make font larger
-            low = fontSize + 1
+            minFontSize = fontSize + 1
         }
         else { break }
 
         // Update font size
-        fontSize = (high + low) >> 1
+        fontSize = (maxFontSize + minFontSize) >> 1
     }
+
 }
